@@ -5,7 +5,8 @@
         <title>Joseph Lee Lombardo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" type="text/css" href="./JLL_portfolio_CSS.css">
+        <link rel="shortcut icon" type="img/png" href="Media_Folder/tab_img.png">
+        <link rel="stylesheet" type="text/css" href="css/JLL_portfolio_CSS.css">
     </head>
 
     <!--BODY-->
@@ -14,9 +15,12 @@
         <!--Navbar-->
         <div class="navbar">
             <a class="active" href="#home">Home</a>
+            <!--New added section 5/22/23-->
+            <a href="#Slideshow">Slideshow</a>
             <a href="#about">About</a>
             <a href="#github">GitHub</a>
-            <a href="#contact">Contact</a>
+            <!--Onclick and ondblclick added to open/close the contact form at the top-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--These were inserted to add space between the navbar and the first heading-->
@@ -24,7 +28,7 @@
         <br>
 
         <!--Background mp4-->
-        <div id="#home">
+        <div id="home">
             <video autoplay muted loop id="team_video">
                 <source src="./Media_Folder/Team_work.mp4" type="video/mp4">
                 Your browser does not support the HTML5 video. <!--Display msg if video fails to run-->
@@ -49,6 +53,58 @@
             </strong>
         </div>
 
+        <!--Slideshow section added 5/22/23-->
+        <div id="Slideshow">
+            <div id="Slideshow_background">
+                <div id="Slideshow_container">
+                    <!--Slide 1/6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_images" src="Media_Folder/me_slideshow.jpg.jpeg" alt="Picture of Joe Lee Lombardo">
+                        <div class="Slideshow_text">Hello! I am ready to assist in any projects!</div>
+                    </div>
+                    <!--Slide 2/6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_images" src="Media_Folder/HTML_CSS_and_JS.jpeg" alt="HTML, CSS, and JS logos">
+                        <div class="Slideshow_text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!--Slide 3/6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_images" src="Media_Folder/Python.png" alt="Python logo">
+                        <div class="Slideshow_text">the popular programming language Python,</div>
+                    </div>
+                    <!--Slide 4/6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_images" src="Media_Folder/CSharp_and_DotNET.png" alt="C# and Dot NET logos">
+                        <div class="Slideshow_text">C#, .NET Framework, ASP.NET, MVC,</div>
+                    </div>
+                    <!--Slide 5/6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_images" src="Media_Folder/SQL_and_Database.jpg" alt="SQL logo">
+                        <div class="Slideshow_text">back end development, databases and SQL!</div>
+                    </div>
+                    <!--Slide 6/6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_images" src="Media_Folder/Work_together.jpg" alt="Working together">
+                        <div class="Slideshow_text">Feel free to <a class="white_text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!--Previous/Next buttons-->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!--This adds a space between the slideshow images and the dots below-->
+
+                <!--Slideshow dots (alternate way to navigate slideshow)-->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+
         <!--About Section-->
         <div class="row" id="about">
             <!--LEFT column-->
@@ -63,6 +119,8 @@
                     <br>
                     <br>I am a graduate of <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a>'s C# and .NET Full Stack Developer Boot Camp,
                     and trained and experienced in the following web and programming languages: HTML, CSS, Javascript, SQL, C#, and more.
+                    <br>
+                    <br>I am a full-stack developer and would love to work with you on your project. <a onclick="openForm()" class="contact">Contact</a> me below! <!--added 5/22/23-->
                 </p>
             </div>
         </div>
@@ -85,33 +143,30 @@
         </div>
 
         <!--Contact Section-->
-        <div class="row" id="contact">
-            <!--Contact image LEFT column-->
-            <div class="column_2 column_tall">
-                <img src="./Media_Folder/Work_together.jpg" alt="Working together image">
-            </div>
-            <!--Contact form RIGHT column-->
-            <div class="column_1 column_tall">
-                <h1>Contact</h1>
-                <form action="https://formspree.io/f/xayzlkrz" method="POST"> <!--Here we are useing a 3rd party service to submit the contact form data, so you insert your formspree endpoint in the action attribute-->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <div id="contact">
+            <button onclick="openForm()" class="popUp_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xayzlkrz" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Enter your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Enter your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>		
+                        <input type="text" placeholder="Enter your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">
+
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
 
         <!--Footer Section-->
         <footer>
-            <p>
-                <p class="center">Joseph Lee Lombardo &nbsp;|&nbsp; Portfolio &nbsp;|&nbsp; 2023</p>
-                <br>
-            </p>
+                <p class="center">Joseph Lee Lombardo &nbsp;|&nbsp; Portfolio &nbsp;|&nbsp; 2023</p><br>
         </footer>
-
+        <script src="js/portfolio.js"></script>
     </body>
 </html>
