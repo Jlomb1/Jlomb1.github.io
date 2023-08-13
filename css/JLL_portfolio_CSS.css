@@ -9,7 +9,7 @@ body {
     transition: 3s opacity; /*causes a 3s fade in*/
     letter-spacing: .2vw; /*vw is a relative measurement, 1vw is equal to 1% of the viewport width (IMPORTANT NOTE)*/
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
     overflow-x: hidden; /*prevents the horizontal scroll bar from appearing when the quote is hovered over*/
     user-select: none; /*prevents the text on the webpage from being highlighted by the user*/
 }
@@ -28,13 +28,13 @@ h1 {
 
 h1:hover {
     filter: grayscale(7%); /*Adds a slight gray filter when hovered over*/
-    transform: scale(1.1); /*when hovered they increase in size by 1.1*/
+    transform: scale(1.03); /*when hovered they increase in size by 1.1*/
     transition: 1s; /*This makes the transformation last a second*/
 }
 
 /*--Styling for the mp4 text--*/
 .white_text {
-    color: whitesmoke;
+    color: #fff5ee;
     padding-top: 10vh; /*adds padding (equal to 10% of the viewport height) to the top of the portfolio title text*/
 }
 
@@ -49,7 +49,7 @@ p {
 }
 
 p:hover {
-    transform: scale(1.01); /*When hovered the paragraphs increase in size by 1.01*/
+    transform: scale(1.03); /*When hovered the paragraphs increase in size by 1.01*/
     transition: 1s; /*Transform transition will last 1 second*/
 }
 
@@ -59,7 +59,7 @@ p:hover {
 }
 
 .center:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
     transition: 2s;
 }
 
@@ -93,8 +93,8 @@ img:hover {
 
 /*--Footer elements--*/
 footer {
-    padding: 2%;
-    background-color: whitesmoke;
+    padding: 1%;
+    background-color: #faebd7;
 }
 /***************************** END OF GENERAL STYLING ************************************/
 
@@ -119,7 +119,7 @@ footer {
 .navbar a {
     float: left; /*This specifies that the text floats on the left on the navbar*/
     display: block; /*IMPORTANT NOTE: This ensures that other text will be displayed on the same line or row instead of a new line*/
-    color: whitesmoke;
+    color: #fff5ee;
     padding: .75vw 1vw; /*Padding around text*/
     text-decoration: none; /*"none" gets rid of underlines on navbar*/
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -137,7 +137,7 @@ footer {
 }
 
 .navbar a:hover {
-    background-color: whitesmoke;
+    background-color: #fff5ee;
     color: black;
     font-weight: bold;
     cursor: pointer;
@@ -145,7 +145,7 @@ footer {
 }
 
 .navbar a.active {  /*Home button: This targets the "a" element on the navbar with the "active" class*/
-    background-color: #8b4513;
+    background-color: #c9b9ad;
 }
 /************************* END OF NAVBAR STYLING ***********************/
 
@@ -169,9 +169,9 @@ footer {
 /*--Text over the video--*/
 .video_text {
     background: rgba(0, 0, 0, 0.5); /*IMPORTANT: The 0.5 provides a semi-transparent background for the text to sit over*/
-    color: whitesmoke; /*Font color*/
+    color: #fff5ee; /*Font color*/
     width: 100%; /*video_text container fills the width of the video*/
-    height: 100vh; /*ensures the video_text container fills the height of the viewport so that the slideshow is not partially displayed*/
+    height: 77vh; /*ensures the video_text container fills the height of the viewport so that the slideshow is not partially displayed*/
     padding-top: 2vh; /*This adds padding around the video_text container so that the background goes slightly beyond the text*/
     position: relative; /*IMPORTANT: This sets the text relative to its normal positioning, allowing us to use the animation below*/
     -webkit-animation: moveVideoText 5.75s;
@@ -222,7 +222,7 @@ footer {
     top: 50%;
     width: auto; /*the width of the buttons is automatically adjusted based on the content*/
     padding: 2vw;
-    color: darkgray;
+    color: black;
     font-weight: bold;
     font-size: 1.5vw;
     border-radius: 0 3px 3px 0;
@@ -238,11 +238,11 @@ footer {
 
 .Previous:hover, .Next:hover {
     background-color: rgba(0, 0, 0, 0.8); /*gives background of the arrows a transparent gray color*/
-    color: white; 
+    color: #fff5ee; 
 }
 
 .Slideshow_text {
-    color: white;
+    color: #fff5ee;
     padding: 1vw;
     position: absolute; /*ensures the text is positioned WITHIN the img*/
     bottom: 0; /*sets text at the bottom of img*/
@@ -261,7 +261,7 @@ footer {
     height: 1vw;
     width: 1vw;
     margin: .25vw; /*adds additional space between*/
-    background-color: white;
+    background-color: #fff5ee;
     border-radius: 50%; /*makes the dots circles by rounding each corner*/
     display: inline-block; /*allows the dots to sit next to eachother rather than on an ew line*/
     transition: background-color 0.6s ease; /*when clicked on the dots transition to a different color when clicked or hovered over*/
@@ -301,7 +301,7 @@ footer {
     width: 50%; /*This ensures the column takes up half of the page width*/
     padding: 1.6%;
     height: 450px; /*Sets the height of the column to 450px (may need to be adjusted depending on the text you enter)*/
-    background-color: whitesmoke; /*Sets the background color of the columns with class column_1*/
+    background-color: #c9b9ad; /*Sets the background color of the columns with class column_1*/
 }
 
 .column_2 {
@@ -326,7 +326,7 @@ footer {
     bottom: 1.75vw; 
     right: 1.75vw;
     width: 25vw;
-    background-color: whitesmoke;
+    background-color: #fff5ee;
     color: black;
     border: solid black;
     cursor: pointer;
@@ -357,7 +357,7 @@ footer {
 .form-container {
     max-width: 49vw; 
     padding: 1vw; /*adds padding between the form-popup and the form-container*/
-    background-color: whitesmoke;
+    background-color: #fff5ee;
 }
 
 .form-container input[type=text] {
@@ -381,7 +381,7 @@ button {
 }
 
 button:hover, .form-container .btn:hover {
-    color: white;
+    color: #fff5ee;
     background-color: black;
     transition-duration: 1s;
     -webkit-transition-duration: 1s; /*for safari 4.0-8.0*/
@@ -390,7 +390,7 @@ button:hover, .form-container .btn:hover {
 
 /*--submit button--*/
 .form-container .btn {
-    background-color: whitesmoke;
+    background-color: #fff5ee;
     color: black;
     border-color: black;
     margin-bottom: 1vh; /*adds space between the submit button and the close button*/
@@ -399,12 +399,12 @@ button:hover, .form-container .btn:hover {
 /*--close button--*/
 .form-cotainer .cancel {
     background-color: black;
-    color: whitesmoke;
+    color: #fff5ee;
     border-color: gray;
 }
 
 .form-container .cancel:hover {
-    color: white;
+    color: #fff5ee;
     background-color: darkred;
     transition-duration: 1s;
     -webkit-transition-duration: 1s;
@@ -458,7 +458,7 @@ button:hover, .form-container .btn:hover {
 
 @media screen and (min-width: 1536px) and (max-width: 2269px) {
     p {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
     }
 }
 
